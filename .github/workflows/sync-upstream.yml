@@ -14,11 +14,8 @@ permissions:
 jobs:
   sync:
     # Only run on the private repository
-    if: github.repository == 'aws/private-aws-lc-staging'
-    runs-on:
-      - codebuild-aws-lc-ci-github-actions-${{ github.run_id }}-${{ github.run_attempt }}
-        image:linux-5.0
-        instance-size:small
+    if: github.repository == 'skmcgrail/aws-lc-temp'
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false  # Continue other branches even if one fails
       matrix:
