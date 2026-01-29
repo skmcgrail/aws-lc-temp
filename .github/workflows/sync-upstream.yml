@@ -71,7 +71,7 @@ jobs:
         run: |
           ORIGIN_URL=$(git remote get-url origin)
           if [[ "$ORIGIN_URL" == *"github.com/aws/aws-lc"* ]] || [[ "$ORIGIN_URL" == *"github.com:aws/aws-lc"* ]]; then
-            if [[ "$ORIGIN_URL" != *"private-aws-lc"* ]]; then
+            if [[ "$ORIGIN_URL" != *"aws-lc-temp"* ]]; then
               echo "::error::SAFETY CHECK FAILED: Origin points to aws/aws-lc. Refusing to push."
               echo "Origin URL: $ORIGIN_URL"
               exit 1
